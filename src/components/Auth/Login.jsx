@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({ getCredentials }) => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-const submitHandler = (e) => {
-    e.preventDefault()
-    
-}
+    const submitHandler = (e) => {
+        e.preventDefault();
+        getCredentials(email, password);
+        setEmail("");
+        setPassword("");
+    }
 
     return (
         <div className='h-screen w-full bg-gray-600 flex justify-center items-center ' >
@@ -22,25 +24,25 @@ const submitHandler = (e) => {
 
                     <div className='flex flex-col gap-5'>
 
-                        <input 
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                        value={email}
-                        type="text"
-                        required
-                         className='border-2 border-gray-700 px-10 py-4 rounded-xl '
-                          placeholder='email' />
+                        <input
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
+                            value={email}
+                            type="text"
+                            required
+                            className='border-2 border-gray-700 px-10 py-4 rounded-xl '
+                            placeholder='email' />
 
                         <input
-                        onChange={((e) => {
-                            setPassword(e.target.value);
-                        })}
-                        value={password}
-                        required
-                         type="password"
-                          className='border-2 border-gray-700 px-10 py-4 rounded-xl '
-                           placeholder='password' />
+                            onChange={((e) => {
+                                setPassword(e.target.value);
+                            })}
+                            value={password}
+                            required
+                            type="password"
+                            className='border-2 border-gray-700 px-10 py-4 rounded-xl '
+                            placeholder='password' />
 
                     </div>
 
