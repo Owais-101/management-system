@@ -5,9 +5,9 @@ export const employee = [
     email: "aman.verma@example.com",
     password: "123",
     role: "user",
-    isActive: true,
     tasks: [
       {
+        status:"active",
         active: true,
         newTask: true,
         completed: false,
@@ -18,6 +18,7 @@ export const employee = [
         category: "Management"
       },
       {
+        status:"pending",
         active: false,
         newTask: false,
         completed: true,
@@ -28,6 +29,7 @@ export const employee = [
         category: "Meeting"
       },
       {
+        status:"failed",
         active: false,
         newTask: false,
         completed: false,
